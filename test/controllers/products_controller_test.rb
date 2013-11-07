@@ -4,9 +4,9 @@ class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
     @update = {
-      title: 'Lorem Ipsum'
-      description: 'Wibbles are fun'
-      image_url: 'lorem.jpg'
+      title: 'Lorem Ipsum',
+      description: 'Wibbles are fun',
+      image_url: 'lorem.jpg',
       price: 19.95
     }
   end
@@ -41,7 +41,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should update product" do
-    patch :update, id: @product, @update
+    patch :update, id: @product, product: @update
     assert_redirected_to product_path(assigns(:product))
   end
 
